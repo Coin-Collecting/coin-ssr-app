@@ -8,7 +8,6 @@ import { responsiveStateReducer, responsiveStoreEnhancer } from 'redux-responsiv
 import reducers  from './redux/reducers';
 
 import Routes from './routes';
-import './index.css';
 
 // REDUX
 export const store = createStore(

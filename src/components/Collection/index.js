@@ -91,7 +91,8 @@ class Collection extends React.Component {
       addCoin,
       removeCoin,
     } = this.props;
-    if (loading && !coins) return (
+
+    if (loading) return (
       <div classname="collection-container">
         <Issues />
         <Spinner />
@@ -102,7 +103,7 @@ class Collection extends React.Component {
       <Authenticate>
         <div className="collection-container">
           <Issues />
-          <table>
+          <table className="branded-table">
             <thead>
             <tr>
               <th>Year</th>
