@@ -5,9 +5,9 @@ export default class extends Component {
   render() {
     return (
       <p className="App-intro">
-        This is our custom component
+        This is the homepage
         <br/>
-        <Link to="/">Home</Link>
+        <Link to="/collection">Collection</Link>
       </p>
     );
   }
