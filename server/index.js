@@ -13,8 +13,10 @@ const renderToString = reactDomServer.renderToString;
 const match = reactRouter.match;
 const RouterContext = reactRouter.RouterContext;
 
+const getDataFromTree = require('react-apollo').getDataFromTree;
+
 const staticFiles = [
-  '/static/*',
+  '/css/*',
   '/logo.svg',
   '/asset-manifest.json',
   '/favicon.ico'
@@ -48,6 +50,9 @@ app.get('*', (req, res) => {
           res.redirect(302, redirect.pathname = redirect.search);
         } else if(ssrData) {
           const ReactApp = renderToString(react.createElement(RouterContext, ssrData));
+          getDataFromTree(ReactApp)
+            .then()
+          console.log({ReactApp});
           const RenderedApp = htmlData.replace('{{SSR}}', ReactApp);
           res.status(200).send(RenderedApp);
         } else {

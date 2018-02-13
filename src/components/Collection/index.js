@@ -218,6 +218,7 @@ const coinsQuery = graphql(CoinsQuery, {
   name: 'coinsData',
   options: ({ params: { issueId, page } }) => {
     return {
+      ssr: false,
       variables: {
         count: DEFAULT_COUNT,
         issueId: issueId,
